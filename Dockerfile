@@ -19,11 +19,12 @@ RUN dnf -y update \
     && dnf -y install --nodocs $PKGS \
     && dnf -y install --nodocs $STATIC_PKGS \
     && dnf -y install --nodocs $CONTAINER_TOOL_PKGS \
-    && wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux-${OC_VERSION}.tar.gz -O - | tar --exclude='./README.md' -C bin -zxf - \
+    && wget https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl -O /usr/local/bin/kubectl \
+    && wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux-${OC_VERSION}.tar.gz -O - |tar --exclude="./kubectl" --exclude="./README.md" -C /usr/local/bin  -zxf - \
     && wget https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64 -O /usr/local/bin/yq \
     && wget https://github.com/wercker/stern/releases/download/${STERN_VERSION}/stern_linux_amd64 -O /usr/local/bin/stern \
     && wget https://github.com/stedolan/jq/releases/download/jq-${JQ_VERSION}/jq-linux64 -O /usr/local/bin/jq \
-    && chmod +x /usr/local/bin/yq /usr/local/bin/jq /usr/local/bin/stern \
+    && chmod +x /usr/local/bin/yq /usr/local/bin/jq /usr/local/bin/stern /usr/local/bin/kubectl \
     && mkdir -p /usr/share/maven /usr/share/maven/ref \
     && curl -fsSL -o /tmp/apache-maven.tar.gz ${MAVEN_BASE_URL}/apache-maven-$MAVEN_VERSION-bin.tar.gz \
     && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c - \
