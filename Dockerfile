@@ -20,7 +20,7 @@ RUN dnf -y update \
     && dnf -y install --nodocs $STATIC_PKGS \
     && dnf -y install --nodocs $CONTAINER_TOOL_PKGS \
     && wget https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl -O /usr/local/bin/kubectl \
-    && wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux-${OC_VERSION}.tar.gz -O - |tar --exclude="./kubectl" --exclude="./README.md" -C /usr/local/bin  -zxf - \
+    && wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux-${OC_VERSION}.tar.gz -O - |tar --exclude='kubectl' --exclude='README.md' -C /usr/local/bin  -zxf - \
     && wget https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64 -O /usr/local/bin/yq \
     && wget https://github.com/wercker/stern/releases/download/${STERN_VERSION}/stern_linux_amd64 -O /usr/local/bin/stern \
     && wget https://github.com/stedolan/jq/releases/download/jq-${JQ_VERSION}/jq-linux64 -O /usr/local/bin/jq \
