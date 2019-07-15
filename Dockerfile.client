@@ -1,0 +1,17 @@
+FROM fedora
+
+ENV OC_VERSION="4.1.4"
+ENV YQ_VERSION="2.4.0"
+ENV JQ_VERSION="1.6"
+ENV KN_VERSION="v0.2.0"
+
+ARG PKGS="wget httpie buildah podman"
+
+RUN dnf -y update \
+    && dnf -y install --nodocs $PKGS \
+    && wget https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl -O /usr/local/bin/kubectl \
+    && wget https://github.com/knative/client/releases/download/${KN_VERSION}/kn-linux-amd64 -O /usr/local/bin/kn \
+    && wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux-${OC_VERSION}.tar.gz -O - |tar --exclude='kubectl' --exclude='README.md' -C /usr/local/bin  -zxf - \
+    && wget https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64 -O /usr/local/bin/yq \
+    && wget https://github.com/stedolan/jq/releases/download/jq-${JQ_VERSION}/jq-linux64 -O /usr/local/bin/jq \
+    && chmod +x /usr/local/bin/yq /usr/local/bin/jq /usr/local/bin/kubectl /usr/local/bin/kn
