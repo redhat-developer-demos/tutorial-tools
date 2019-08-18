@@ -1,0 +1,35 @@
+schema_version: 1
+
+name: knative
+version: 0.0.1
+description: "Install Knative and Tekton Clients"
+
+labels: 
+   - name: "com.rhd.tutorial.tools.kn-version"
+     value: "v0.2.0"
+   - name: "com.rhd.tutorial.tools.tkn-version"
+     value: "0.2.2"
+   - name: "io.k8s.description"
+     value: "The Knative and Tekton Clients"
+   - name: "io.k8s.display-name"
+     value: "Tutorial Tools Knative"     
+
+envs:
+  - name: "KN_VERSION"
+    value: "v0.2.0"
+  - name: "TKN_VERSION"
+    value: "0.2.2"
+
+# unfortunately by now the version needs to be hardcoded.
+artifacts:
+  - name: knative-client
+    url:  https://github.com/knative/client/releases/download/v0.2.0/kn-linux-amd64
+    sha256: 86b9c7f27eca0cb024b1ac20b2dfb142af39fd099d50401cd2b313586e1d8936
+    target: kn
+  - name: tekton-cli
+    url: https://github.com/tektoncd/cli/releases/download/v0.2.2/tkn_0.2.2_Linux_x86_64.tar.gz
+    sha256: f6e1657a87488e4fbce55430f897234857773fd4e59765fe53f87b43c54dc510
+    target: tkn_0.2.2_Linux_x86_64.tar.gz
+
+execute: 
+ - script: install.sh

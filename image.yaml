@@ -1,0 +1,15 @@
+name: "quay.io/rhdevelopers/tutorial-tools"
+version: "0.0.1"
+from: "registry.access.redhat.com/ubi8/ubi-minimal:latest"
+description: "The Red Hat Developers Tutorial Tools Image"
+
+labels:
+- name: "maintainer"
+  value: "Red Hat Devx Team "
+
+packages:
+ manager: microdnf
+
+
+  
+  

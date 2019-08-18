@@ -1,0 +1,16 @@
+schema_version: 1
+
+name: user
+version: 0.0.1
+description: "Create the tutorial user"
+
+envs:
+  - name: USER_NAME
+    value: "developer"
+  - name: GROUP_NAME
+    value: "developer"
+  - name: DEVELOPER_HOME
+    value: "/home/developer"
+
+execute: 
+ - script: create.sh

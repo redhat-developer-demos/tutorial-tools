@@ -1,0 +1,38 @@
+schema_version: 1
+
+envs:
+   - name: PATH
+     value: "$JAVA_HOME/bin:$PATH"
+# Define the  modules
+# Migrate to use quarkus official  repo
+modules:
+  repositories:
+    - path: shared-modules
+    - path: clients-modules
+    - path: quarkus-modules
+  install:
+    - name: common
+      version: 0.0.1
+    - name: user
+      version: 0.0.1  
+    - name: openshift
+      version: 4.1.9
+    - name: graalvm-ce
+      version: 19.1.1
+    - name: knative
+      version: 0.0.1
+    - name: utils
+      version: 0.0.1
+    - name: maven
+      version: 3.6.1
+    - name: maven-config
+      version: 0.0.1
+
+run:
+   user: 1001
+   workdir: "/home/developer"
+   entrypoint:
+    - "/usr/local/bin/run.sh"
+   cmd:
+    - "bash"
+ 

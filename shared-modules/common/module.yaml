@@ -1,0 +1,22 @@
+schema_version: 1
+
+name: "common"
+version: 0.0.1
+description: "Common packages needed by all images"
+
+labels:
+  - name: "io.k8s.description"
+    value: "Base image with common linux packages"
+  - name: "io.k8s.display-name"
+    value: "Tutorial Tools Base"
+  - name: "com.rhd.tutorial.tools.kubectl-version"
+    value: "1.13"
+
+packages:
+  install:
+    - which
+    - wget
+    - tar
+    - gzip   
+    - shadow-utils
+    - unzip

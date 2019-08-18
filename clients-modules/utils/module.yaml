@@ -1,0 +1,42 @@
+schema_version: 1
+
+name: utils
+version: 0.0.1
+description: "Installs all utility modules"
+
+labels: 
+   - name: "com.rhd.tutorial.tools.stern-version"
+     value: "1.11.0"
+   - name: "com.rhd.tutorial.tools.jq-version"
+     value: "1.6"
+   - name: "com.rhd.tutorial.tools.yq-version"
+     value: "2.4.0"    
+   - name: "io.k8s.description"
+     value: "The tutorial tools utilities image"
+   - name: "io.k8s.display-name"
+     value: "Tutorial Tools Utility"
+
+envs:
+   - name: "YQ_VERSION"
+     value: "2.4.0"
+   - name: "JQ_VERSION"
+     value: "1.6"
+   - name: "STERN_VERSION"
+     value: "1.11.0"
+
+artifacts:
+  - name: yq_linux_amd64
+    url: https://github.com/mikefarah/yq/releases/download/2.4.0/yq_linux_amd64
+    sha256: 99a01ae32f0704773c72103adb7050ef5c5cad14b517a8612543821ef32d6cc9
+    target: yq
+  - name: jq-linux64
+    url: https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64
+    sha256: af986793a515d500ab2d35f8d2aecd656e764504b789b66d7e1a0b727a124c44
+    target: jq
+  - name: stern_linux_amd64
+    url: https://github.com/wercker/stern/releases/download/1.11.0/stern_linux_amd64
+    sha256: e0b39dc26f3a0c7596b2408e4fb8da533352b76aaffdc18c7ad28c833c9eb7db
+    target: stern
+
+execute: 
+ - script: install.sh

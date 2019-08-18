@@ -1,0 +1,30 @@
+schema_version: 1
+
+name: "quay.io/rhdevelopers/tutorial-tools-extra"
+version: "0.0.1"
+description: "Extra tools required for some advance cloud native application developement"
+from: "registry.fedoraproject.org/fedora"
+
+labels:
+- name: "maintainer"
+  value: "Red Hat Devx Team"
+
+modules:
+ repositories:
+    - path: shared-modules
+ install:
+   - name: common
+     version: 0.0.1
+   - name: user
+     version: 0.0.1   
+
+packages: 
+  manager: dnf
+  install:
+   - podman
+   - httpie
+   - git
+
+run:
+   user: 1001
+   workdir: "/home/developer"

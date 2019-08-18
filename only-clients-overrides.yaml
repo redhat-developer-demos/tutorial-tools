@@ -1,0 +1,39 @@
+schema_version: 1
+
+name: "quay.io/rhdevelopers/clients"
+version: "0.0.1"
+description: "Only client tools such oc, kubectl, kn, tkn etc.,"
+from: "registry.access.redhat.com/ubi8/ubi-minimal:latest"
+
+labels:
+- name: "maintainer"
+  value: "Red Hat Devx Team"
+
+modules:
+  repositories:
+    - path: shared-modules
+    - path: clients-modules
+  install:
+    - name: common
+      version: 0.0.1  
+    - name: user
+      version: 0.0.1  
+    - name: openshift
+      version: 4.1.9
+    - name: knative
+      version: 0.0.1
+    - name: utils
+      version: 0.0.1
+
+packages: 
+  manager: microdnf
+  install:
+   - shadow-utils
+   - wget
+   - tar
+   - gzip
+   - unzip
+
+run:
+   user: 1001
+   workdir: "/home/developer"
