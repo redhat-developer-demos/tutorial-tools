@@ -24,7 +24,3 @@ packages:
    - podman
    - httpie
    - git
-
-run:
-   user: 1001
-   workdir: "/home/developer"

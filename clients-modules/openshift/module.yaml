@@ -21,7 +21,7 @@ envs:
 # unfortunately by now the version needs to be hardcoded.
 artifacts:
   - name: openshift-client-4.1.9
-    url:  https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux-4.1.9.tar.gz
+    url:  https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.1.9/openshift-client-linux-4.1.9.tar.gz
     sha256: 71ff0dec292afeecb2c4bb8ede73f9c3cfcd583675fee8d5d4b094191dc190aa
     target: openshift-client-linux-4.1.9.tar.gz
   - name: kubectl-1.15.2

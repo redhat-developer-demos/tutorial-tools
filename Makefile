@@ -14,11 +14,11 @@ build:
 	cekit -v build --overrides-file only-clients-overrides.yaml $(BUILD_ENGINE) --no-squash
 	docker-squash quay.io/rhdevelopers/clients:${CLIENTS_IMAGE_VERSION} --tag=quay.io/rhdevelopers/clients:${CLIENTS_IMAGE_VERSION}
 	
-# .PHONY: test
-# test: build
-# 	cekit -v test --overrides-file quarkus-maven-overrides.yaml behave
-# 	cekit -v test --overrides-file quarkus-native-image-overrides.yaml behave
-# 	cekit -v test --overrides-file quarkus-native-s2i-overrides.yaml behave
+.PHONY: test
+test: build
+	cekit -v test --overrides-file tutorial-tools-overrides.yaml behave
+	cekit -v test --overrides-file extra-tools-overrides.yaml behave
+	cekit -v test --overrides-file only-clients-overrides behave
 
 .PHONY: push
 push:

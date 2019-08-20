@@ -33,7 +33,3 @@ packages:
    - tar
    - gzip
    - unzip
-
-run:
-   user: 1001
-   workdir: "/home/developer"

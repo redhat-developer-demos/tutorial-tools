@@ -28,11 +28,4 @@ modules:
     - name: maven-config
       version: 0.0.1
 
-run:
-   user: 1001
-   workdir: "/home/developer"
-   entrypoint:
-    - "/usr/local/bin/run.sh"
-   cmd:
-    - "bash"
  
