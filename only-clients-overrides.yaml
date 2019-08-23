@@ -17,7 +17,7 @@ modules:
     - name: common
       version: 0.0.1  
     - name: user
-      version: 0.0.1  
+      version: 0.0.2
     - name: openshift
       version: 4.1.9
     - name: knative
@@ -33,3 +33,6 @@ packages:
    - tar
    - gzip
    - unzip
+
+run:
+  user: 1001

@@ -16,7 +16,7 @@ modules:
    - name: common
      version: 0.0.1
    - name: user
-     version: 0.0.1   
+     version: 0.0.2
 
 packages: 
   manager: dnf
@@ -24,3 +24,6 @@ packages:
    - podman
    - httpie
    - git
+
+run:
+  user: 1001
