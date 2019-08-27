@@ -20,3 +20,6 @@ packages:
     - gzip   
     - shadow-utils
     - unzip
+    - git
+    - ncurses
+    - procps-ng
