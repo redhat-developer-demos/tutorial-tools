@@ -5,8 +5,8 @@ BUILD_ENGINE := docker
 
 .DEFAULT_GOAL := build
 
-.PHONY: build
-build:
+.PHONY: build-all
+build-all:
 	cekit -v build --overrides-file tutorial-tools-overrides.yaml $(BUILD_ENGINE) --no-squash
 	docker-squash quay.io/rhdevelopers/tutorial-tools:${IMAGE_VERSION} --tag=quay.io/rhdevelopers/tutorial-tools:${IMAGE_VERSION}
 	cekit -v build --overrides-file extra-tools-overrides.yaml $(BUILD_ENGINE) --no-squash
@@ -20,8 +20,17 @@ test: build
 	cekit -v test --overrides-file extra-tools-overrides.yaml behave
 	cekit -v test --overrides-file only-clients-overrides behave
 
-.PHONY: push
-push:
+.PHONY: build-tools
+build-tools:	
+	cekit -v build --overrides-file tutorial-tools-overrides.yaml $(BUILD_ENGINE) --no-squash
+	docker-squash quay.io/rhdevelopers/tutorial-tools:${IMAGE_VERSION} --tag=quay.io/rhdevelopers/tutorial-tools:${IMAGE_VERSION}
+
+.PHONY: push-tools
+push-tools:	
+	$(BUILD_ENGINE) push quay.io/rhdevelopers/tutorial-tools:$(IMAGE_VERSION)
+	
+.PHONY: push-all
+push-all:
 	$(BUILD_ENGINE) push quay.io/rhdevelopers/tutorial-tools:$(IMAGE_VERSION)
 	$(BUILD_ENGINE) push quay.io/rhdevelopers/tutorial-tools-extra:$(TOOLS_EXTRA_IMAGE_VERSION)
 	$(BUILD_ENGINE) push quay.io/rhdevelopers/clients:$(CLIENTS_IMAGE_VERSION)

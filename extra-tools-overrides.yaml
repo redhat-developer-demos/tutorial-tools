@@ -16,7 +16,7 @@ modules:
    - name: common
      version: 0.0.1
    - name: user
-     version: 0.0.2
+     version: 0.0.1
 
 packages: 
   manager: dnf

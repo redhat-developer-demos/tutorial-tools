@@ -7,6 +7,6 @@ SOURCES_DIR=/tmp/artifacts
 SCRIPT_DIR=$(dirname $0)
 
 mkdir -p ${DEVELOPER_HOME}/.m2/repository
-cp -v ${SCRIPT_DIR}/extras/* ${DEVELOPER_HOME}/.m2
+cp -v ${SCRIPT_DIR}/extras/*.sh ${DEVELOPER_HOME}/.m2
 
-chown -R 1001:0 ${DEVELOPER_HOME}
+chmod -R g+=rwx ${DEVELOPER_HOME}/.m2
