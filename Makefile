@@ -28,7 +28,16 @@ build-tools:
 .PHONY: push-tools
 push-tools:	
 	$(BUILD_ENGINE) push quay.io/rhdevelopers/tutorial-tools:$(IMAGE_VERSION)
-	
+
+.PHONY:	build-clients
+build-clients:	
+	cekit -v build --overrides-file only-clients-overrides.yaml $(BUILD_ENGINE) --no-squash
+	docker-squash quay.io/rhdevelopers/clients:${CLIENTS_IMAGE_VERSION} --tag=quay.io/rhdevelopers/tutorial-tools:${IMAGE_VERSION}
+
+.PHONY:	push-clients
+push-clients:	
+	$(BUILD_ENGINE) push quay.io/rhdevelopers/clients:$(CLIENTS_IMAGE_VERSION)
+
 .PHONY: push-all
 push-all:
 	$(BUILD_ENGINE) push quay.io/rhdevelopers/tutorial-tools:$(IMAGE_VERSION)
