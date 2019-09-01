@@ -1,9 +1,9 @@
 schema_version: 1
 
-name: "quay.io/rhdevelopers/tutorial-tools-extra"
+name: "quay.io/rhdevelopers/container-tools"
 version: "0.0.1"
-description: "Extra tools required for some advance cloud native application developement"
-from: "registry.fedoraproject.org/fedora"
+description: "The tools that will be used to build and run container"
+from: "quay.io/buildah/stable"
 
 labels:
 - name: "maintainer"
@@ -12,18 +12,19 @@ labels:
 modules:
  repositories:
     - path: shared-modules
+    - path: clients-modules
  install:
    - name: common
      version: 0.0.1
    - name: user
-     version: 0.0.1
+     version: 0.0.1 
+   - name: openshift
+     version: 4.1.9
 
 packages: 
   manager: dnf
   install:
-   - podman
    - httpie
-   - git
 
 run:
   user: 1001

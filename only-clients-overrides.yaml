@@ -27,12 +27,6 @@ modules:
 
 packages: 
   manager: microdnf
-  install:
-   - shadow-utils
-   - wget
-   - tar
-   - gzip
-   - unzip
 
 run:
   user: 1001

@@ -17,7 +17,7 @@ The tool builds three linux container images
 
 2. [clients](https://quay.io/repository/rhdevelopers/clients?tab=tags) - This image holds the clients that are used in typical Cloud Native Application development such as kubectl, oc(openshift client),yq,jq,kn,tkn,stern etc.,
 
-3. [tutorial-tools-extra](https://quay.io/repository/rhdevelopers/tutorial-tools-extra?tab=tags)  - This image is used for advanced use cases where you want to build containers within containers using tools like buildah and podman etc.,
+3. [container-tools](https://quay.io/repository/rhdevelopers/container-toolsa?tab=tags)  - This image is used for advanced use cases where you want to build containers within containers using tools like buildah etc.,
 
 ## Build and Push Images
 
@@ -39,10 +39,10 @@ To build only *clients*
 cekit -v build --overrides-file only-clients-overrides.yaml ${BUILD_ENGINE} --no-squash
 ```
 
-To build only *tutorial-tools-extra*
+To build only *container-tools*
 
 ```bash
-cekit -v build --overrides-file extra-tools-overrides.yaml ${BUILD_ENGINE} --no-squash
+cekit -v build --overrides-file container-tools-overrides.yaml ${BUILD_ENGINE} --no-squash
 ```
 
 Where `BUILD_ENGINE` could be any one `buildah`, `podman` or `docker`
@@ -54,4 +54,3 @@ make push
 ```
 
 It is also possible to push individual images using the same technique as build
-
