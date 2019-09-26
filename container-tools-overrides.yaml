@@ -20,11 +20,14 @@ modules:
      version: 0.0.1 
    - name: openshift
      version: 4.1.9
+   - name: utils
+     version: 0.0.1
 
 packages: 
   manager: dnf
   install:
    - httpie
+   - gettext
 
 run:
   user: 1001
