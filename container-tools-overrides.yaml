@@ -9,6 +9,10 @@ labels:
 - name: "maintainer"
   value: "Red Hat Devx Team"
 
+envs:
+   - name: HOME
+     value: "/opt/developer"
+
 modules:
  repositories:
     - path: shared-modules
@@ -30,4 +34,10 @@ packages:
    - gettext
 
 run:
-  user: 1001
+  user: 10001
+  entrypoint:
+    - "/entrypoint.sh"
+  cmd:
+    - "tail"
+    - "-f"
+    - "/dev/null"
