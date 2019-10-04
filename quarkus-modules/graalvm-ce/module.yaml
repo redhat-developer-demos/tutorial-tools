@@ -1,12 +1,12 @@
 schema_version: 1
 
 name: graalvm-ce
-version: "19.1.1"
+version: "19.2.0.1"
 description: "Install GraalVM CE"
 
 labels: 
    - name: "com.rhd.tutorial.tools.graalvmce-version"
-     value: "19.1.1"
+     value: "19.2.0.1"
    - name: "io.k8s.description"
      value: "The Graal VM CE image"
    - name: "io.k8s.display-name"
@@ -14,7 +14,7 @@ labels:
 
 envs:
    - name: "GRAALVM_VERSION"
-     value: "19.1.1"
+     value: "19.2.0.1"
    - name: "JAVA_HOME"
      value: "/opt/graalvm"
    - name: "GRAALVM_HOME"
@@ -23,9 +23,9 @@ envs:
      value: "$PATH:$JAVA_HOME/bin"
 
 artifacts:
-  - name: graalvm-ce-19.1.1
-    url: https://github.com/oracle/graal/releases/download/vm-19.1.1/graalvm-ce-linux-amd64-19.1.1.tar.gz
-    sha256: 96579d88277b6571dd28c2a1795575507d516c43b9fe0569e03a86061b574ff7
+  - name: graalvm-ce-19.2.0.1
+    url: https://github.com/oracle/graal/releases/download/vm-19.2.0.1/graalvm-ce-linux-amd64-19.2.0.1.tar.gz
+    sha256: 53e3e37530337fd276e133fc6f2bb72e20acc770aa7320ce612fdc718c88f42d
     target: graalvm-ce-amd64.tar.gz
 
 packages:
