@@ -17,4 +17,9 @@ if ! whoami &> /dev/null; then
   fi
 fi
 
+CONFIGURE_SCRIPTS=(
+  ${DEVELOPER_HOME}/.m2/configure-maven.sh
+)
+source ${DEVELOPER_HOME}/.m2/configure.sh
+
 exec "$@"
