@@ -17,4 +17,7 @@ cp -v ${SCRIPT_DIR}/bin/run.sh /usr/local/bin/
 
 chmod +x /usr/local/bin/run.sh
 
-chmod +x /usr/local/bin/yq /usr/local/bin/jq /usr/local/bin/stern /usr/local/bin/hey
+curl https://raw.githubusercontent.com/ahmetb/kubectx/master/kubectx -o  /usr/local/bin/kubectx
+curl https://raw.githubusercontent.com/ahmetb/kubectx/master/kubens -o  /usr/local/bin/kubens
+
+chmod +x /usr/local/bin/yq /usr/local/bin/jq /usr/local/bin/stern /usr/local/bin/hey /usr/local/bin/kubectx /usr/local/bin/kubens

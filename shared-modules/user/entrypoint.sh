@@ -22,4 +22,6 @@ CONFIGURE_SCRIPTS=(
 )
 source ${DEVELOPER_HOME}/.m2/configure.sh
 
+alias docker=podman
+
 exec "$@"
