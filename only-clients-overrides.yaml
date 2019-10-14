@@ -3,7 +3,6 @@ schema_version: 1
 name: "quay.io/rhdevelopers/clients"
 version: "0.0.1"
 description: "Only client tools such oc, kubectl, kn, tkn etc.,"
-from: "registry.access.redhat.com/ubi8/ubi-minimal:latest"
 
 labels:
 - name: "maintainer"
@@ -30,7 +29,7 @@ modules:
       version: 0.0.1
 
 packages: 
-  manager: microdnf
+  manager: yum
 
 run:
   user: 10001
