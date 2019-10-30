@@ -24,7 +24,7 @@ modules:
     - name: openshift
       version: 4.1.9
     - name: graalvm-ce
-      version: 19.2.0.1
+      version: 19.2.1
     - name: knative
       version: 0.0.1
     - name: utils
