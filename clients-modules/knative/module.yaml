@@ -1,35 +1,35 @@
 schema_version: 1
 
 name: knative
-version: 0.0.1
+version: 0.0.3
 description: "Install Knative and Tekton Clients"
 
-labels: 
-   - name: "com.rhd.tutorial.tools.kn-version"
-     value: "v0.2.0"
-   - name: "com.rhd.tutorial.tools.tkn-version"
-     value: "0.2.2"
-   - name: "io.k8s.description"
-     value: "The Knative and Tekton Clients"
-   - name: "io.k8s.display-name"
-     value: "Tutorial Tools Knative"     
+labels:
+  - name: "com.rhd.tutorial.tools.kn-version"
+    value: "v0.14.0"
+  - name: "com.rhd.tutorial.tools.tkn-version"
+    value: "0.8.0"
+  - name: "io.k8s.description"
+    value: "The Knative and Tekton Clients"
+  - name: "io.k8s.display-name"
+    value: "Tutorial Tools Knative"
 
 envs:
   - name: "KN_VERSION"
-    value: "v0.2.0"
+    value: "v0.14.0"
   - name: "TKN_VERSION"
-    value: "0.4.0"
+    value: "0.8.0"
 
 # unfortunately by now the version needs to be hardcoded.
 artifacts:
   - name: knative-client
-    url:  https://github.com/knative/client/releases/download/v0.2.0/kn-linux-amd64
-    sha256: 86b9c7f27eca0cb024b1ac20b2dfb142af39fd099d50401cd2b313586e1d8936
+    url: https://github.com/knative/client/releases/download/v0.14.0/kn-linux-amd64
+    sha256: 4dcc7afd657cf246b5fb6ccd18530a86d30607c024ecd9c4ef5be58e3822f339
     target: kn
   - name: tekton-cli
-    url: https://github.com/tektoncd/cli/releases/download/v0.4.0/tkn_0.4.0_Linux_x86_64.tar.gz
-    sha256: 507a765ce4fab98ba15561dd6ae8dae43618db4ba683e5027286a65677e7b89d
+    url: https://github.com/tektoncd/cli/releases/download/v0.8.0/tkn_0.8.0_Linux_x86_64.tar.gz
+    sha256: e131865fbd7b406ae7ad471fb9561f270f8b60de2cb29e1dc15485ffb60944b6
     target: tkn.tar.gz
 
-execute: 
- - script: install.sh
+execute:
+  - script: install.sh

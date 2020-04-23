@@ -10,14 +10,14 @@ labels:
   - name: "io.k8s.display-name"
     value: "Tutorial Tools Base"
   - name: "com.rhd.tutorial.tools.kubectl-version"
-    value: "1.13"
+    value: "1.17"
 
 packages:
   install:
     - which
     - wget
     - tar
-    - gzip   
+    - gzip
     - shadow-utils
     - unzip
     - git

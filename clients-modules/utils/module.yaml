@@ -1,28 +1,28 @@
 schema_version: 1
 
 name: utils
-version: 0.0.1
+version: 0.0.3
 description: "Installs all utility modules"
 
-labels: 
-   - name: "com.rhd.tutorial.tools.stern-version"
-     value: "1.11.0"
-   - name: "com.rhd.tutorial.tools.jq-version"
-     value: "1.6"
-   - name: "com.rhd.tutorial.tools.yq-version"
-     value: "2.4.0"    
-   - name: "io.k8s.description"
-     value: "The tutorial tools utilities image"
-   - name: "io.k8s.display-name"
-     value: "Tutorial Tools Utility"
+labels:
+  - name: "com.rhd.tutorial.tools.stern-version"
+    value: "1.11.0"
+  - name: "com.rhd.tutorial.tools.jq-version"
+    value: "1.6"
+  - name: "com.rhd.tutorial.tools.yq-version"
+    value: "3.3.0"
+  - name: "io.k8s.description"
+    value: "The tutorial tools utilities image"
+  - name: "io.k8s.display-name"
+    value: "Tutorial Tools Utility"
 
 envs:
-   - name: "YQ_VERSION"
-     value: "2.4.0"
-   - name: "JQ_VERSION"
-     value: "1.6"
-   - name: "STERN_VERSION"
-     value: "1.11.0"
+  - name: "YQ_VERSION"
+    value: "3.3.0"
+  - name: "JQ_VERSION"
+    value: "1.6"
+  - name: "STERN_VERSION"
+    value: "1.11.0"
 
 artifacts:
   - name: yq_linux_amd64
@@ -41,5 +41,5 @@ artifacts:
     url: https://storage.googleapis.com/hey-release/hey_linux_amd64
     target: hey
 
-execute: 
- - script: install.sh
+execute:
+  - script: install.sh

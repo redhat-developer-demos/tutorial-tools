@@ -1,16 +1,17 @@
 schema_version: 1
 
 name: "quay.io/rhdevelopers/clients"
-version: "0.0.1"
+version: "0.0.4"
 description: "Only client tools such oc, kubectl, kn, tkn etc.,"
+from: "quay.io/buildah/stable"
 
 labels:
-- name: "maintainer"
-  value: "Red Hat Devx Team"
+  - name: "maintainer"
+    value: "Red Hat Devx Team"
 
 envs:
-   - name: HOME
-     value: "/opt/developer"
+  - name: HOME
+    value: "/opt/developer"
 
 modules:
   repositories:
@@ -18,18 +19,21 @@ modules:
     - path: clients-modules
   install:
     - name: common
-      version: 0.0.1  
+      version: 0.0.1
     - name: user
       version: 0.0.1
     - name: openshift
-      version: 4.1.9
+      version: 4.3.13
     - name: knative
-      version: 0.0.1
+      version: 0.0.3
     - name: utils
-      version: 0.0.1
+      version: 0.0.3
 
-packages: 
-  manager: yum
+packages:
+  manager: dnf
+  install:
+    - httpie
+    - gettext
 
 run:
   user: 10001

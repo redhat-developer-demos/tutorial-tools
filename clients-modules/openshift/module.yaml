@@ -1,7 +1,7 @@
 schema_version: 1
 
 name: "openshift"
-version: 4.1.9
+version: 4.3.13
 description: "OpenShift and Kubernetes Clients"
 
 labels:
@@ -12,22 +12,18 @@ labels:
   - name: "com.rhd.tutorial.tools.kubectl-version"
     value: "1.13"
   - name: "com.rhd.tutorial.tools.oc-version"
-    value: "4.1.9"  
-      
+    value: "4.3.13"
+
 envs:
   - name: OC_VERSION
-    value: "4.1.9"
+    value: "4.3.13"
 
 # unfortunately by now the version needs to be hardcoded.
 artifacts:
-  - name: openshift-client-4.1.9
-    url:  https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.1.9/openshift-client-linux-4.1.9.tar.gz
-    sha256: 71ff0dec292afeecb2c4bb8ede73f9c3cfcd583675fee8d5d4b094191dc190aa
-    target: openshift-client-linux-4.1.9.tar.gz
-  - name: kubectl-1.15.2
-    url: https://storage.googleapis.com/kubernetes-release/release/v1.15.2/bin/linux/amd64/kubectl
-    sha256: a737000af13f9c8c347945bc581b819659c464eae92056424bdddae735e2e888
-    target: kubectl
+  - name: openshift-client-4.3.13
+    url: https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux.tar.gz
+    sha256: 88391e02b6053cdc3ef6ce427d848e8c4ad2050683aa73bc9fcbc9cd26825b09
+    target: openshift-client-linux.tar.gz
 
 execute:
   - script: install.sh
