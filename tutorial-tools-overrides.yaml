@@ -22,7 +22,7 @@ modules:
     - name: user
       version: 0.0.1
     - name: openshift
-      version: 4.3.13
+      version: 4.4.3
     - name: graalvm-ce
       version: 20.0.0
     - name: knative
