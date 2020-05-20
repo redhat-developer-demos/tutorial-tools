@@ -10,7 +10,7 @@ docker==4.2.0
 docker-squash==1.0.8
 docopt==0.6.2
 funcsigs==1.0.2
-httplib2==0.17.3
+httplib2==0.18.0
 idna==2.9
 Jinja2==2.11.2
 kitchen==1.2.6
