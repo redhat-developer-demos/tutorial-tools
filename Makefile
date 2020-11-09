@@ -25,7 +25,11 @@ push-tools:
 
 .PHONY:	build-clients
 build-clients:	clean
-	cekit -v build --overrides-file only-clients-overrides.yaml $(BUILD_ENGINE)  --no-squash --tag=quay.io/rhdevelopers/clients:$(CLIENTS_IMAGE_VERSION) --tag=quay.io/rhdevelopers/clients
+	cekit -v build --overrides-file only-clients-overrides.yaml \
+	$(BUILD_ENGINE) \
+	--no-squash \
+	--tag=quay.io/rhdevelopers/clients:$(CLIENTS_IMAGE_VERSION) \
+	--tag=quay.io/rhdevelopers/clients
 
 .PHONY:	push-clients
 push-clients:	

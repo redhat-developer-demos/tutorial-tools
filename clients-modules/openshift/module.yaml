@@ -1,7 +1,7 @@
 schema_version: 1
 
 name: "openshift"
-version: 4.4.3
+version: 4.6.1
 description: "OpenShift and Kubernetes Clients"
 
 labels:
@@ -10,19 +10,19 @@ labels:
   - name: "io.k8s.display-name"
     value: "Tutorial Tools Base"
   - name: "com.rhd.tutorial.tools.kubectl-version"
-    value: "1.13"
+    value: "1.19"
   - name: "com.rhd.tutorial.tools.oc-version"
-    value: "4.4"
+    value: "4.6"
 
 envs:
   - name: OC_VERSION
-    value: "4.4.3"
+    value: "4.6.1"
 
 # unfortunately by now the version needs to be hardcoded.
 artifacts:
-  - name: openshift-client-4.4.3
-    url: https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux.tar.gz
-    sha256: 06cbae1a6196e986093f6c8a1b18702d046e714d41a6bff62f6641f9e3d023ca
+  - name: openshift-client-4.6.1
+    url: https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux-4.6.1.tar.gz
+    sha256: 6b6fc3aa77092312df45e3d8bf0451fbb95a2b30826ec8c6dc9fff2f69e8ee5a
     target: openshift-client-linux.tar.gz
 
 execute:

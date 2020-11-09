@@ -1,5 +1,5 @@
 name: "quay.io/rhdevelopers/tutorial-tools"
-version: "0.0.4"
+version: "0.0.5"
 from: "docker.io/centos:8"
 description: "The Red Hat Developers Tutorial Tools Image"
 

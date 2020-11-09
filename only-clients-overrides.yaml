@@ -1,7 +1,7 @@
 schema_version: 1
 
 name: "quay.io/rhdevelopers/clients"
-version: "0.0.5"
+version: "0.0.6"
 description: "Only client tools such oc, kubectl, kn, tkn etc.,"
 from: "quay.io/buildah/stable"
 
@@ -23,9 +23,9 @@ modules:
     - name: user
       version: 0.0.1
     - name: openshift
-      version: 4.4.3
+      version: 4.6.1
     - name: knative
-      version: 0.0.3
+      version: 0.17.0
     - name: utils
       version: 0.0.3
 
