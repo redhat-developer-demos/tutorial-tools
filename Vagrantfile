@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", ip: "192.168.33.10"
 
   config.vm.provider "virtualbox" do |vb|
-     vb.name = "fedors_30_ws"
+     vb.name = "fedora_30_ws"
      vb.memory = "2048"
      vb.cpus = "2"
   end

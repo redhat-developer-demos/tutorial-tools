@@ -10,7 +10,7 @@ labels:
   - name: "io.k8s.display-name"
     value: "Tutorial Tools Base"
   - name: "com.rhd.tutorial.tools.kubectl-version"
-    value: "1.17"
+    value: "1.24"
 
 packages:
   install:

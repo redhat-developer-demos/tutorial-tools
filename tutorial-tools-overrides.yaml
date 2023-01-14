@@ -22,11 +22,11 @@ modules:
     - name: user
       version: 0.0.1
     - name: openshift
-      version: 4.6.1
+      version: 4.11.22
     - name: graalvm-ce
-      version: 20.0.0
+      version: 22.3.0
     - name: knative
-      version: 0.0.3
+      version: 1.8.1
     - name: utils
       version: 0.0.3
     - name: maven
