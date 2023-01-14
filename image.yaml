@@ -1,6 +1,6 @@
 name: "quay.io/rhdevelopers/tutorial-tools"
-version: "0.0.5"
-from: "docker.io/centos:8"
+version: "0.0.6"
+from: "quay.io/centos/centos:stream9"
 description: "The Red Hat Developers Tutorial Tools Image"
 
 labels:
@@ -8,4 +8,4 @@ labels:
     value: "Red Hat Devx Team "
 
 packages:
-  manager: yum
+  manager: dnf

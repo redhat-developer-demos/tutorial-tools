@@ -7,7 +7,7 @@ The repository that holds various linux container images used as part of [Red Ha
 - All the images are built using [cekit](https://cekit.readthedocs.io/en/latest/getting-started/index.html),check the [installation guide](https://cekit.readthedocs.io/en/latest/handbook/installation/index.html) on how to install.
 - Any container runtime like [podman](https://podman.io) or [buildah](https://buildah.io) or [Docker](https://www.docker.com/products/container-runtime)
 
-> **NOTE**: The scripts by default uses docker
+> **NOTE**: The scripts by default uses docker.  
 
 ## Images
 
@@ -24,25 +24,25 @@ The tool builds three linux container images
 To build all the images listed above:
 
 ```bash
-make clean build
+make clean build-all -e BUILD_ENGINE=${BUILD_ENGINE}
 ```
 
 To build only *tutorial-tools*
 
 ```bash
-cekit -v build --overrides-file tutorial-tools-overrides.yaml ${BUILD_ENGINE} --no-squash
+cekit -v build --overrides-file tutorial-tools-overrides.yaml -e BUILD_ENGINE=${BUILD_ENGINE} --no-squash
 ```
 
 To build only *clients*
 
 ```bash
-cekit -v build --overrides-file only-clients-overrides.yaml ${BUILD_ENGINE} --no-squash
+cekit -v build --overrides-file only-clients-overrides.yaml -e BUILD_ENGINE=${BUILD_ENGINE} --no-squash
 ```
 
 To build only *container-tools*
 
 ```bash
-cekit -v build --overrides-file container-tools-overrides.yaml ${BUILD_ENGINE} --no-squash
+cekit -v build --overrides-file container-tools-overrides.yaml -e BUILD_ENGINE=${BUILD_ENGINE} --no-squash
 ```
 
 Where `BUILD_ENGINE` could be any one `buildah`, `podman` or `docker`

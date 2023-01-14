@@ -34,7 +34,7 @@ artifacts:
     target: tkn.tar.gz
   - name: kamel-cli
     url: https://github.com/apache/camel-k/releases/download/v1.11.0/camel-k-client-1.11.0-linux-64bit.tar.gz
-    sha512: 0ab1f1559ca8d60352d179ce48af264ab62d6fc02aed1629c5bd661374375b108571df90a13f69a9301dbd96d6901b2b6ad24ecb5f0534ac3485f275b236ed7f
+    sha512: c951a30c9c13fa7751bbc28598326378dbbef1ca14c3590a4f131766a2abcf7eff3ec1cf14c0173c52b31cb926e2772af301612e5173e9a0e1dfef26b18574d7
     target: kamel.tar.gz
 
 execute:

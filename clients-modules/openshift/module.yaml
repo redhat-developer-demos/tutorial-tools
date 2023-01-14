@@ -20,7 +20,7 @@ envs:
 
 # unfortunately by now the version needs to be hardcoded.
 artifacts:
-  - name: openshift-client-4.6.1
+  - name: openshift-client-4.11.22
     url: https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux-4.11.22.tar.gz
     sha256: 4ba53bd2603c42de885a348945ee17f1dbc45edf7dcea2c8f2d680e1a49d1b82
     target: openshift-client-linux.tar.gz
