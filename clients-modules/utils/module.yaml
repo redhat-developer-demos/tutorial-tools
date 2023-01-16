@@ -22,7 +22,7 @@ envs:
   - name: "JQ_VERSION"
     value: "1.6"
   - name: "STERN_VERSION"
-    value: "1.11.0"
+    value: "1.22.0"
 
 artifacts:
   - name: yq_linux_amd64
@@ -34,12 +34,12 @@ artifacts:
     sha256: af986793a515d500ab2d35f8d2aecd656e764504b789b66d7e1a0b727a124c44
     target: jq
   - name: stern_linux_amd64
-    url: https://github.com/wercker/stern/releases/download/1.11.0/stern_linux_amd64
-    sha256: e0b39dc26f3a0c7596b2408e4fb8da533352b76aaffdc18c7ad28c833c9eb7db
+    url: https://github.com/stern/stern/releases/download/v1.22.0/stern_1.22.0_linux_amd64.tar.gz
+    sha256: 6eff028d104b53c8a53c3af752a52292ddb2024b469ce5ab05aee2f0954bde72
     target: stern
   - name: hey
-    url: https://storage.googleapis.com/hey-release/hey_linux_amd64
-    sha256: 25795686f6a7ee85e3dc29e260287f9a6a2165b279a40a16ac5de8fa616657ca 
+    url: https://hey-release.s3.us-east-2.amazonaws.com/hey_linux_amd64
+    sha256: e8d775962833c04940686a3310963341e26de171034fa7a7c934a5ccba4b02c2 
     target: hey
 
 execute:

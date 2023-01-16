@@ -2,7 +2,7 @@ IMAGE_VERSION := $(shell cat image.yaml | egrep ^version  | cut -d"\"" -f2)
 CLIENTS_IMAGE_VERSION := $(shell cat only-clients-overrides.yaml | egrep ^version  | cut -d"\"" -f2)
 BUILD_ENGINE := docker
 
-.DEFAULT_GOAL := build
+.DEFAULT_GOAL := build-all
 
 .PHONY: build-all
 build-all:	build-tools	build-clients
