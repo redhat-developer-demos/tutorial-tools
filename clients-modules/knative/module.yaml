@@ -1,16 +1,16 @@
 schema_version: 1
 
 name: knative
-version: 1.8.1
+version: 1.10.0
 description: "Install Knative, Camel-K, Tekton Clients"
 
 labels:
   - name: "com.rhd.tutorial.tools.kn-version"
-    value: "v1.8.1"
+    value: "v1.10.0"
   - name: "com.rhd.tutorial.tools.tkn-version"
-    value: "0.29.0"
+    value: "0.31.1"
   - name: "com.rhd.tutorial.tools.kamel-version"
-    value: "1.2.0"
+    value: "1.11.0"
   - name: "io.k8s.description"
     value: "The Knative and Tekton Clients"
   - name: "io.k8s.display-name"
@@ -18,19 +18,19 @@ labels:
 
 envs:
   - name: "KN_VERSION"
-    value: "v1.8.1"
+    value: "v1.10.0"
   - name: "TKN_VERSION"
-    value: "0.29.0"
+    value: "0.31.1"
 
 # unfortunately by now the version needs to be hardcoded.
 artifacts:
   - name: knative-client
-    url: https://github.com/knative/client/releases/download/knative-v1.8.1/kn-linux-amd64
-    sha256: bb0e52175a08dcb1ef0ee4c519959862defea1042a77f62047b3114bb55bece5
+    url: https://github.com/knative/client/releases/download/knative-v1.10.0/kn-linux-amd64
+    sha256: fc45d60e7567095bde670f604e11396398ab339d3a4a9107c8ad861c94db525d
     target: kn
   - name: tekton-cli
-    url: https://github.com/tektoncd/cli/releases/download/v0.29.0/tkn_0.29.0_Linux_x86_64.tar.gz
-    sha256: 91a43dab15c5cb8406197cc746bbdb586f4b82a8f76f63e301c3b9cd6b908b3a
+    url: https://github.com/tektoncd/cli/releases/download/v0.31.1/tkn_0.31.1_Linux_x86_64.tar.gz
+    sha256: dc1a15443133ebc669dbebfab548f1d1abe401ce9034a3e61b0cd0364c34e75c
     target: tkn.tar.gz
   - name: kamel-cli
     url: https://github.com/apache/camel-k/releases/download/v1.11.0/camel-k-client-1.11.0-linux-64bit.tar.gz
