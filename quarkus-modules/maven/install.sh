@@ -7,7 +7,7 @@ set -o pipefail
 SOURCES_DIR=/tmp/artifacts
 SCRIPT_DIR=$(dirname $0)
 
-tar xzf ${SOURCES_DIR}/apache-maven-${MAVEN_VERSION}-bin.tar.gz -C /usr/share
+tar xzf ${SOURCES_DIR}/apache-maven-bin.tar.gz -C /usr/share
 mv /usr/share/apache-maven-${MAVEN_VERSION} /usr/share/maven
 ln -s ${MAVEN_HOME}/bin/mvn /usr/bin/mvn
 

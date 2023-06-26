@@ -23,9 +23,9 @@ modules:
     - name: user
       version: 0.0.1
     - name: openshift
-      version: 4.11.22
+      version: 4.13.4
     - name: knative
-      version: 1.8.1
+      version: 1.10.0
     - name: utils
       version: 0.0.3
 
