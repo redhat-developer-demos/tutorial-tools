@@ -1,5 +1,5 @@
 name: "quay.io/rhdevelopers/tutorial-tools"
-version: "0.0.6"
+version: "0.0.7"
 from: "quay.io/centos/centos:stream9"
 description: "The Red Hat Developers Tutorial Tools Image"
 
